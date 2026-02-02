@@ -46,7 +46,7 @@
         content: "";
         position: fixed;
         inset: 0;
-        background: linear-gradient(180deg, rgba(255, 247, 237, 0.05) 0%, rgba(255, 255, 255, 0.18) 60%);
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.22) 60%);
         z-index: -1;
       }
 
@@ -155,35 +155,14 @@
         font-size: clamp(32px, 4vw, 44px);
         line-height: 1.2;
         margin-bottom: 16px;
-        text-shadow: 0 3px 16px rgba(255, 255, 255, 0.85);
+        text-shadow: 0 6px 20px rgba(255, 255, 255, 0.7);
       }
 
       .hero p {
         color: var(--muted);
         font-size: 18px;
         margin-bottom: 24px;
-        text-shadow: 0 2px 10px rgba(255, 255, 255, 0.85);
-      }
-
-      .hero-lead {
-        display: inline-block;
-        background: rgba(255, 255, 255, 0.75);
-        padding: 6px 10px;
-        border-radius: 999px;
-      }
-
-      .text-emphasis {
-        display: inline-block;
-        background: rgba(255, 255, 255, 0.85);
-        padding: 6px 10px;
-        border-radius: 12px;
-        box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
-      }
-
-      .cta.outline-strong {
-        background: rgba(255, 255, 255, 0.95);
-        color: #0f172a;
-        border: 1px solid #0f766e;
+        text-shadow: 0 4px 16px rgba(255, 255, 255, 0.7);
       }
 
       .hero-actions {
@@ -198,14 +177,16 @@
         padding: 10px 18px;
         border-radius: 999px;
         font-weight: 600;
+        background: rgba(255, 255, 255, 0.85);
       }
 
       .card {
-        background: var(--card);
-        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.92);
+        border: 1px solid rgba(226, 232, 240, 0.75);
         border-radius: 20px;
         padding: 20px;
         box-shadow: 0 12px 32px rgba(15, 23, 42, 0.06);
+        backdrop-filter: blur(6px);
       }
 
       .grid-3 {
@@ -224,7 +205,7 @@
         letter-spacing: 0.2em;
         color: #0f172a;
         font-weight: 700;
-        text-shadow: 0 2px 10px rgba(255, 255, 255, 0.9);
+        text-shadow: 0 2px 10px rgba(255, 255, 255, 0.7);
         margin-bottom: 12px;
       }
 
@@ -324,12 +305,12 @@
     <main>
       <section class="container hero">
         <div>
-          <p class="section-title hero-lead">Exportação de bovinos vivos</p>
+          <p class="section-title">Exportação de bovinos vivos</p>
           <h2>
             Especialistas em gerenciar a burocracia e a operação da quarentena e
             habilitação de EPE.
           </h2>
-          <p class="text-emphasis">
+          <p>
             Atuamos com excelência em assistência técnica e responsabilidade
             sanitária, garantindo conformidade, bem-estar animal e eficiência em
             cada etapa.
@@ -338,7 +319,7 @@
             <a class="cta" href="https://wa.me/5516991210700" target="_blank" rel="noreferrer">
               Solicitar atendimento
             </a>
-            <a class="cta outline-strong" href="#contato">Ver contatos</a>
+            <a class="outline" href="#contato">Ver contatos</a>
           </div>
         </div>
         <div class="card">
@@ -367,7 +348,7 @@
       <section id="servicos" class="container">
         <p class="section-title">Serviços</p>
         <h3 class="section-headline">Atuação completa em cada etapa</h3>
-        <p class="muted text-emphasis" style="margin-bottom: 24px;">
+        <p class="muted" style="margin-bottom: 24px;">
           Estruturamos processos para exportações seguras e eficientes, com suporte
           técnico e operacional especializado.
         </p>
