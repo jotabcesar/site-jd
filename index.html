@@ -7,7 +7,7 @@
     <title>J&amp;D Serviços Veterinários | Quarentena e habilitação de EPE</title>
     <meta
       name="description"
-      content="Gestão de quarentena, habilitação de EPE e assistência veterinária para exportação de bovinos vivos. Atendimento técnico em São Carlos, SP."
+      content="Gestão de quarentena, habilitação de EPE, assistência veterinária e suporte técnico-documental em defesas administrativas perante a SEFAZ em todo o Brasil."
     />
     <meta name="robots" content="index,follow,max-image-preview:large" />
     <link rel="canonical" href="https://jdservicosveterinarios.com.br/" />
@@ -36,7 +36,7 @@
         "url": "https://jdservicosveterinarios.com.br/",
         "logo": "https://jdservicosveterinarios.com.br/logo.png",
         "image": "https://jdservicosveterinarios.com.br/og.jpg",
-        "description": "Gestão de quarentena, habilitação de EPE e assistência veterinária para exportação de bovinos vivos.",
+        "description": "Gestão de quarentena, habilitação de EPE, assistência veterinária e suporte técnico-documental em defesas administrativas perante Secretarias de Fazenda estaduais.",
         "telephone": "+55-16-99121-0700",
         "email": "jdservicosveterinarios@gmail.com",
         "address": {
@@ -296,16 +296,27 @@
       .hero::after {
         content: "";
         position: absolute;
-        inset: 0;
+        inset: 0 auto 0 0;
+        width: min(67%, 1120px);
         z-index: -1;
-        background:
-          linear-gradient(90deg, rgba(7, 35, 24, 0.96) 0%, rgba(10, 45, 32, 0.86) 43%, rgba(10, 45, 32, 0.24) 78%),
-          linear-gradient(0deg, rgba(7, 35, 24, 0.32), transparent 45%);
+        background: linear-gradient(112deg, rgba(7, 35, 24, 0.99), rgba(16, 63, 43, 0.96));
+        border-radius: 0 48% 48% 0;
+        box-shadow: 35px 0 80px rgba(7, 35, 24, 0.22);
       }
 
       .hero-content {
-        max-width: 700px;
+        max-width: 660px;
         padding: 90px 0 105px;
+      }
+
+      .hero-brand {
+        width: 104px;
+        height: 104px;
+        margin-bottom: 24px;
+        object-fit: cover;
+        border-radius: 50%;
+        clip-path: circle(49%);
+        box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.16), 0 16px 34px rgba(0, 0, 0, 0.2);
       }
 
       .hero .eyebrow {
@@ -313,12 +324,22 @@
       }
 
       .hero h1 {
-        margin: 0 0 22px;
+        margin: 0 0 12px;
         font-family: Georgia, "Times New Roman", serif;
-        font-size: clamp(2.65rem, 6.4vw, 5.4rem);
+        font-size: clamp(2.65rem, 6vw, 5.15rem);
         line-height: 0.99;
         letter-spacing: -0.05em;
         text-wrap: balance;
+      }
+
+      .hero-specialty {
+        max-width: 600px;
+        margin: 0 0 18px;
+        color: var(--gold);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(1.25rem, 2.5vw, 1.8rem);
+        font-weight: 700;
+        line-height: 1.2;
       }
 
       .hero-lead {
@@ -449,6 +470,54 @@
         font-size: 0.94rem;
       }
 
+      .sefaz-service {
+        margin-top: 18px;
+        padding: 42px;
+        display: grid;
+        grid-template-columns: 0.8fr 1.2fr;
+        gap: 54px;
+        align-items: center;
+        color: var(--white);
+        background: var(--green-900);
+        border-radius: 18px;
+        box-shadow: var(--shadow);
+      }
+
+      .sefaz-service .eyebrow {
+        color: var(--gold-light);
+      }
+
+      .sefaz-service h3 {
+        margin: 0;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(1.8rem, 3vw, 2.6rem);
+        line-height: 1.08;
+      }
+
+      .sefaz-copy > p {
+        margin: 0 0 20px;
+        color: rgba(255, 255, 255, 0.82);
+      }
+
+      .sefaz-points {
+        margin: 0;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        list-style: none;
+      }
+
+      .sefaz-points li {
+        padding: 14px;
+        color: rgba(255, 255, 255, 0.9);
+        background: rgba(255, 255, 255, 0.07);
+        border: 1px solid rgba(255, 255, 255, 0.11);
+        border-radius: 10px;
+        font-size: 0.84rem;
+        line-height: 1.45;
+      }
+
       .process-section {
         padding: 110px 0;
         background: var(--white);
@@ -521,6 +590,11 @@
         background: rgba(255, 255, 255, 0.06);
         border: 1px solid rgba(255, 255, 255, 0.14);
         border-radius: 50%;
+      }
+
+      .about-logo img {
+        border-radius: 50%;
+        clip-path: circle(49%);
       }
 
       .about .eyebrow {
@@ -703,7 +777,7 @@
         }
 
         .hero::after {
-          background: linear-gradient(90deg, rgba(7, 35, 24, 0.94), rgba(10, 45, 32, 0.68));
+          width: 78%;
         }
 
         .hero-proof {
@@ -727,6 +801,11 @@
 
         .services-grid {
           grid-template-columns: repeat(2, 1fr);
+        }
+
+        .sefaz-service {
+          grid-template-columns: 1fr;
+          gap: 24px;
         }
 
         .process-layout,
@@ -784,12 +863,23 @@
           background-position: 61% center;
         }
 
+        .hero::after {
+          width: 100%;
+          border-radius: 0;
+          background: linear-gradient(90deg, rgba(7, 35, 24, 0.97), rgba(10, 45, 32, 0.8));
+        }
+
         .hero-content {
           padding: 88px 0;
         }
 
         .hero h1 {
           font-size: clamp(2.45rem, 13vw, 3.5rem);
+        }
+
+        .hero-brand {
+          width: 82px;
+          height: 82px;
         }
 
         .hero-actions,
@@ -814,6 +904,14 @@
 
         .service-index {
           margin-bottom: 24px;
+        }
+
+        .sefaz-service {
+          padding: 30px 24px;
+        }
+
+        .sefaz-points {
+          grid-template-columns: 1fr;
         }
 
         .process-step {
@@ -895,6 +993,7 @@
 
         <nav class="nav-links" id="menu-principal" aria-label="Navegação principal">
           <a href="#servicos">Serviços</a>
+          <a href="#sefaz">Defesas SEFAZ</a>
           <a href="#processo">Como atuamos</a>
           <a href="#sobre">Sobre</a>
           <a href="#contato">Contato</a>
@@ -914,8 +1013,10 @@
       <section class="hero" id="inicio" aria-labelledby="hero-title">
         <div class="container">
           <div class="hero-content">
+            <img class="hero-brand" src="/logo.png" alt="" width="512" height="512" aria-hidden="true" />
             <p class="eyebrow">Exportação de bovinos vivos</p>
-            <h1 id="hero-title">Segurança sanitária em cada etapa da operação.</h1>
+            <h1 id="hero-title">J&amp;D Serviços Veterinários</h1>
+            <p class="hero-specialty">Gestão de quarentena e habilitação de EPE.</p>
             <p class="hero-lead">
               Gestão de quarentena, habilitação de EPE e assistência técnica com rigor documental,
               bem-estar animal e alinhamento às exigências do mercado.
@@ -1003,6 +1104,25 @@
               <p>Alinhamento com VIGIAGRO e demais órgãos envolvidos na operação.</p>
             </article>
           </div>
+
+          <article class="sefaz-service" id="sefaz">
+            <div>
+              <p class="eyebrow">Defesas administrativas</p>
+              <h3>Suporte técnico-documental perante a SEFAZ em todo o Brasil</h3>
+            </div>
+            <div class="sefaz-copy">
+              <p>
+                Apoiamos a preparação de defesas e impugnações administrativas relacionadas a operações
+                agropecuárias e de exportação, com análise individual do caso e da legislação aplicável
+                em cada estado.
+              </p>
+              <ul class="sefaz-points">
+                <li>Análise técnica de notificações e lançamentos fiscais</li>
+                <li>Reconstrução da cadeia fiscal, sanitária e aduaneira</li>
+                <li>Organização de documentos, provas e fundamentos da defesa</li>
+              </ul>
+            </div>
+          </article>
         </div>
       </section>
 
@@ -1066,6 +1186,7 @@
               <li>Atendimento próximo e comunicação objetiva</li>
               <li>Rigor técnico e documental em todas as etapas</li>
               <li>Integração entre campo, gestão e órgãos reguladores</li>
+              <li>Suporte em defesas administrativas perante as SEFAZ estaduais</li>
             </ul>
           </div>
         </div>
