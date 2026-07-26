@@ -93,6 +93,7 @@
       img {
         display: block;
         max-width: 100%;
+        height: auto;
       }
 
       a {
@@ -587,15 +588,23 @@
       }
 
       .about-logo {
+        width: 100%;
         max-width: 310px;
         margin-inline: auto;
         padding: 28px;
+        aspect-ratio: 1;
+        display: grid;
+        place-items: center;
         background: rgba(255, 255, 255, 0.06);
         border: 1px solid rgba(255, 255, 255, 0.14);
         border-radius: 50%;
       }
 
       .about-logo img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1;
+        object-fit: contain;
         border-radius: 50%;
         clip-path: circle(49%);
       }
