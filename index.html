@@ -1,53 +1,98 @@
 <!doctype html>
-<html lang="pt-br">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>J&amp;D Serviços Veterinários</title>
+    <meta name="theme-color" content="#103f2b" />
+    <title>J&amp;D Serviços Veterinários | Quarentena e habilitação de EPE</title>
     <meta
       name="description"
-      content="J&amp;D Serviços Veterinários - exportação de bovinos vivos, gestão de quarentena e habilitação de EPE."
+      content="Gestão de quarentena, habilitação de EPE e assistência veterinária para exportação de bovinos vivos. Atendimento técnico em São Carlos, SP."
     />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <link rel="canonical" href="https://jdservicosveterinarios.com.br/" />
+    <link rel="icon" href="/logo.png" type="image/png" />
+
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="J&D Serviços Veterinários" />
+    <meta property="og:title" content="J&D Serviços Veterinários" />
+    <meta
+      property="og:description"
+      content="Gestão de quarentena e habilitação de EPE com segurança, conformidade e eficiência."
+    />
+    <meta property="og:url" content="https://jdservicosveterinarios.com.br/" />
+    <meta property="og:image" content="https://jdservicosveterinarios.com.br/og.jpg" />
+    <meta property="og:image:width" content="1199" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="J&D Serviços Veterinários — gestão de quarentena e habilitação de EPE" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "J&D Serviços Veterinários",
+        "url": "https://jdservicosveterinarios.com.br/",
+        "logo": "https://jdservicosveterinarios.com.br/logo.png",
+        "image": "https://jdservicosveterinarios.com.br/og.jpg",
+        "description": "Gestão de quarentena, habilitação de EPE e assistência veterinária para exportação de bovinos vivos.",
+        "telephone": "+55-16-99121-0700",
+        "email": "jdservicosveterinarios@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Capitão Alberto Mendes Junior, 510",
+          "addressLocality": "São Carlos",
+          "addressRegion": "SP",
+          "addressCountry": "BR"
+        },
+        "areaServed": "Brasil",
+        "sameAs": ["https://www.facebook.com/share/1LVeyFBpRG/"]
+      }
+    </script>
+
     <style>
       :root {
-        color-scheme: light;
-        --emerald: #0f766e;
-        --emerald-dark: #0b5f58;
-        --amber: #f59e0b;
-        --bg: #f8fafc;
-        --text: #0f172a;
-        --muted: #475569;
-        --card: #ffffff;
-        --border: #e2e8f0;
+        --green-950: #0a2d20;
+        --green-900: #103f2b;
+        --green-800: #185b3c;
+        --green-700: #20754c;
+        --green-100: #dcebe2;
+        --gold: #d6ad55;
+        --gold-light: #f2e4be;
+        --ink: #14211b;
+        --muted: #596a61;
+        --cream: #f7f4ec;
+        --white: #ffffff;
+        --line: #dce5df;
+        --shadow: 0 20px 55px rgba(10, 45, 32, 0.12);
       }
 
       * {
         box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-        font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 92px;
       }
 
       body {
-        background: linear-gradient(180deg, #fff7ed 0%, #ffffff 60%);
-        color: var(--text);
+        margin: 0;
+        color: var(--ink);
+        background: var(--white);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
       }
 
-      body::before {
-        content: "";
-        position: fixed;
-        inset: 0;
-        background: url("/background.jpg?v=4") center/cover no-repeat fixed;
-        opacity: 1;
-        z-index: -2;
+      body.menu-open {
+        overflow: hidden;
       }
 
-      body::after {
-        content: "";
-        position: fixed;
-        inset: 0;
-        background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.22) 60%);
-        z-index: -1;
+      img {
+        display: block;
+        max-width: 100%;
       }
 
       a {
@@ -55,392 +100,1074 @@
         text-decoration: none;
       }
 
+      button,
+      a {
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      :focus-visible {
+        outline: 3px solid var(--gold);
+        outline-offset: 4px;
+        border-radius: 6px;
+      }
+
+      .skip-link {
+        position: fixed;
+        top: 12px;
+        left: 12px;
+        z-index: 100;
+        padding: 10px 14px;
+        color: var(--white);
+        background: var(--green-950);
+        transform: translateY(-150%);
+      }
+
+      .skip-link:focus {
+        transform: translateY(0);
+      }
+
       .container {
-        width: min(1120px, 100% - 48px);
-        margin: 0 auto;
+        width: min(1160px, calc(100% - 40px));
+        margin-inline: auto;
+      }
+
+      .eyebrow {
+        margin: 0 0 14px;
+        color: var(--green-700);
+        font-size: 0.76rem;
+        font-weight: 800;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      .section-heading {
+        max-width: 760px;
+        margin-bottom: 42px;
+      }
+
+      .section-heading h2 {
+        margin: 0 0 14px;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(2rem, 4vw, 3.25rem);
+        line-height: 1.08;
+        letter-spacing: -0.035em;
+      }
+
+      .section-heading p {
+        max-width: 680px;
+        margin: 0;
+        color: var(--muted);
+        font-size: 1.06rem;
+      }
+
+      .button {
+        min-height: 48px;
+        padding: 13px 20px;
+        border: 1px solid transparent;
+        border-radius: 10px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 9px;
+        font-weight: 800;
+        line-height: 1.2;
+        transition: transform 160ms ease, background-color 160ms ease, border-color 160ms ease;
+      }
+
+      .button:hover {
+        transform: translateY(-2px);
+      }
+
+      .button-primary {
+        color: var(--white);
+        background: var(--green-700);
+        box-shadow: 0 12px 30px rgba(32, 117, 76, 0.28);
+      }
+
+      .button-primary:hover {
+        background: var(--green-800);
+      }
+
+      .button-light {
+        color: var(--green-950);
+        background: rgba(255, 255, 255, 0.94);
+        border-color: rgba(255, 255, 255, 0.5);
       }
 
       header {
         position: sticky;
         top: 0;
-        background: rgba(255, 255, 255, 0.8);
-        backdrop-filter: blur(12px);
-        border-bottom: 1px solid var(--border);
-        z-index: 10;
+        z-index: 50;
+        background: rgba(255, 255, 255, 0.94);
+        border-bottom: 1px solid rgba(220, 229, 223, 0.9);
+        backdrop-filter: blur(14px);
       }
 
       .nav {
+        min-height: 78px;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 20px 0;
-        gap: 16px;
+        gap: 24px;
       }
 
       .brand {
+        min-width: 0;
         display: flex;
         align-items: center;
         gap: 12px;
       }
 
-      .brand-badge {
-        width: 44px;
-        height: 44px;
-        border-radius: 999px;
-        background: var(--emerald);
-        color: white;
-        display: grid;
-        place-items: center;
-        font-weight: 700;
-        letter-spacing: 1px;
+      .brand img {
+        width: 52px;
+        height: 52px;
+        flex: 0 0 auto;
+        border-radius: 50%;
       }
 
-      .brand-logo {
-        width: 46px;
-        height: 46px;
-        border-radius: 999px;
-        object-fit: cover;
-        border: 2px solid #d1fae5;
+      .brand-copy {
+        line-height: 1.2;
       }
 
-      .brand-text small {
+      .brand-copy strong {
+        display: block;
+        color: var(--green-950);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 1.1rem;
+      }
+
+      .brand-copy span {
+        color: var(--green-700);
+        font-size: 0.65rem;
+        font-weight: 800;
+        letter-spacing: 0.16em;
         text-transform: uppercase;
-        letter-spacing: 0.2em;
-        color: var(--emerald);
-        font-size: 11px;
-      }
-
-      .brand-text h1 {
-        font-size: 18px;
       }
 
       .nav-links {
         display: flex;
         align-items: center;
-        gap: 20px;
-        font-size: 14px;
-        color: var(--muted);
+        gap: 26px;
       }
 
-      .cta {
-        padding: 10px 18px;
-        border-radius: 999px;
-        background: var(--emerald);
-        color: white;
-        font-weight: 600;
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
+      .nav-links > a:not(.button) {
+        color: #3c4e44;
+        font-size: 0.92rem;
+        font-weight: 700;
       }
 
-      .cta.facebook {
-        background: #1877f2;
+      .nav-links > a:not(.button):hover {
+        color: var(--green-700);
       }
 
-      .cta svg {
-        width: 16px;
-        height: 16px;
-        fill: currentColor;
+      .menu-toggle {
+        width: 46px;
+        height: 46px;
+        padding: 0;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        display: none;
+        background: var(--white);
+        color: var(--green-950);
+        font: inherit;
+        font-size: 1.35rem;
+        cursor: pointer;
       }
 
       .hero {
-        padding: 72px 0 56px;
+        position: relative;
+        min-height: 690px;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 32px;
         align-items: center;
+        color: var(--white);
+        isolation: isolate;
+        overflow: hidden;
       }
 
-      .hero h2 {
-        font-size: clamp(32px, 4vw, 44px);
-        line-height: 1.2;
-        margin-bottom: 16px;
-        text-shadow: 0 6px 20px rgba(255, 255, 255, 0.7);
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -2;
+        background: url("/background.jpg") center 43% / cover no-repeat;
+        transform: scale(1.01);
       }
 
-      .hero p {
-        color: var(--muted);
-        font-size: 18px;
-        margin-bottom: 24px;
-        text-shadow: 0 4px 16px rgba(255, 255, 255, 0.7);
+      .hero::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background:
+          linear-gradient(90deg, rgba(7, 35, 24, 0.96) 0%, rgba(10, 45, 32, 0.86) 43%, rgba(10, 45, 32, 0.24) 78%),
+          linear-gradient(0deg, rgba(7, 35, 24, 0.32), transparent 45%);
+      }
+
+      .hero-content {
+        max-width: 700px;
+        padding: 90px 0 105px;
+      }
+
+      .hero .eyebrow {
+        color: var(--gold-light);
+      }
+
+      .hero h1 {
+        margin: 0 0 22px;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(2.65rem, 6.4vw, 5.4rem);
+        line-height: 0.99;
+        letter-spacing: -0.05em;
+        text-wrap: balance;
+      }
+
+      .hero-lead {
+        max-width: 620px;
+        margin: 0 0 32px;
+        color: rgba(255, 255, 255, 0.9);
+        font-size: clamp(1.05rem, 2vw, 1.25rem);
       }
 
       .hero-actions {
         display: flex;
-        gap: 16px;
         flex-wrap: wrap;
+        gap: 12px;
       }
 
-      .outline {
-        border: 1px solid var(--emerald);
-        color: var(--emerald);
-        padding: 10px 18px;
-        border-radius: 999px;
-        font-weight: 600;
-        background: rgba(255, 255, 255, 0.85);
+      .hero-proof {
+        position: absolute;
+        right: max(20px, calc((100vw - 1160px) / 2));
+        bottom: 35px;
+        max-width: 420px;
+        padding: 17px 20px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        color: var(--green-950);
+        background: rgba(255, 255, 255, 0.94);
+        border-left: 4px solid var(--gold);
+        border-radius: 10px;
+        box-shadow: var(--shadow);
       }
 
-      .card {
-        background: rgba(255, 255, 255, 0.92);
-        border: 1px solid rgba(226, 232, 240, 0.75);
-        border-radius: 20px;
-        padding: 20px;
-        box-shadow: 0 12px 32px rgba(15, 23, 42, 0.06);
-        backdrop-filter: blur(6px);
+      .hero-proof strong {
+        display: block;
+        margin-bottom: 2px;
       }
 
-      .grid-3 {
+      .hero-proof span {
+        color: var(--muted);
+        font-size: 0.88rem;
+      }
+
+      .trust-strip {
+        background: var(--green-950);
+        color: var(--white);
+      }
+
+      .trust-grid {
+        min-height: 104px;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 16px;
+        grid-template-columns: repeat(3, 1fr);
       }
 
-      section {
-        padding: 56px 0;
+      .trust-item {
+        padding: 24px 30px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        border-right: 1px solid rgba(255, 255, 255, 0.13);
       }
 
-      .section-title {
-        font-size: 12px;
-        text-transform: uppercase;
-        letter-spacing: 0.2em;
-        color: #0f172a;
+      .trust-item:last-child {
+        border-right: 0;
+      }
+
+      .trust-number {
+        color: var(--gold);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 2rem;
         font-weight: 700;
-        text-shadow: 0 2px 10px rgba(255, 255, 255, 0.7);
-        margin-bottom: 12px;
       }
 
-      .section-headline {
-        font-size: 28px;
-        margin-bottom: 16px;
+      .trust-item span:last-child {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 0.9rem;
+        line-height: 1.35;
       }
 
-      .muted {
+      .services {
+        padding: 110px 0;
+        background: var(--cream);
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+      }
+
+      .service-card {
+        min-height: 220px;
+        padding: 28px;
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        box-shadow: 0 8px 28px rgba(10, 45, 32, 0.05);
+        transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+      }
+
+      .service-card:hover {
+        transform: translateY(-5px);
+        border-color: #bfd2c5;
+        box-shadow: var(--shadow);
+      }
+
+      .service-index {
+        width: 36px;
+        height: 36px;
+        margin-bottom: 38px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        color: var(--green-800);
+        background: var(--green-100);
+        font-size: 0.78rem;
+        font-weight: 900;
+      }
+
+      .service-card h3 {
+        margin: 0 0 8px;
+        color: var(--green-950);
+        font-size: 1.06rem;
+        line-height: 1.35;
+      }
+
+      .service-card p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.94rem;
+      }
+
+      .process-section {
+        padding: 110px 0;
+        background: var(--white);
+      }
+
+      .process-layout {
+        display: grid;
+        grid-template-columns: 0.8fr 1.2fr;
+        gap: 80px;
+        align-items: start;
+      }
+
+      .process-layout .section-heading {
+        position: sticky;
+        top: 120px;
+        margin: 0;
+      }
+
+      .process-steps {
+        display: grid;
+      }
+
+      .process-step {
+        padding: 28px 0;
+        display: grid;
+        grid-template-columns: 72px 1fr;
+        gap: 24px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .process-step:first-child {
+        padding-top: 4px;
+      }
+
+      .step-number {
+        color: var(--gold);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 2.5rem;
+        line-height: 1;
+      }
+
+      .process-step h3 {
+        margin: 0 0 7px;
+        color: var(--green-950);
+        font-size: 1.15rem;
+      }
+
+      .process-step p {
+        margin: 0;
         color: var(--muted);
       }
 
-      .list {
+      .about {
+        padding: 110px 0;
+        color: var(--white);
+        background: var(--green-900);
+      }
+
+      .about-grid {
         display: grid;
-        gap: 12px;
-      }
-
-      .list-item {
-        display: flex;
-        gap: 12px;
-        align-items: flex-start;
-      }
-
-      .dot {
-        width: 10px;
-        height: 10px;
-        border-radius: 999px;
-        background: var(--emerald);
-        margin-top: 6px;
-      }
-
-      .process {
-        background: linear-gradient(180deg, #ffffff 0%, #fff7ed 100%);
-      }
-
-      .contact-card {
-        display: grid;
-        gap: 16px;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      }
-
-      footer {
-        padding: 24px 0 40px;
-        border-top: 1px solid var(--border);
-        color: var(--muted);
-        font-size: 14px;
-      }
-
-      .social-links {
-        display: flex;
-        gap: 12px;
+        grid-template-columns: 1fr 1fr;
+        gap: 72px;
         align-items: center;
       }
 
-      .social-links a {
-        color: var(--emerald);
-        font-weight: 600;
+      .about-logo {
+        max-width: 310px;
+        margin-inline: auto;
+        padding: 28px;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: 50%;
       }
 
-      @media (max-width: 720px) {
+      .about .eyebrow {
+        color: var(--gold-light);
+      }
+
+      .about h2 {
+        margin: 0 0 20px;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(2rem, 4vw, 3.25rem);
+        line-height: 1.08;
+      }
+
+      .about p {
+        color: rgba(255, 255, 255, 0.78);
+        font-size: 1.04rem;
+      }
+
+      .about-list {
+        margin: 28px 0 0;
+        padding: 0;
+        display: grid;
+        gap: 13px;
+        list-style: none;
+      }
+
+      .about-list li {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+      }
+
+      .about-list li::before {
+        content: "✓";
+        color: var(--gold);
+        font-weight: 900;
+      }
+
+      .contact {
+        padding: 110px 0;
+        background: var(--cream);
+      }
+
+      .contact-panel {
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        box-shadow: var(--shadow);
+      }
+
+      .contact-intro {
+        padding: 52px;
+        color: var(--white);
+        background: var(--green-950);
+      }
+
+      .contact-intro .eyebrow {
+        color: var(--gold-light);
+      }
+
+      .contact-intro h2 {
+        margin: 0 0 18px;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(2rem, 4vw, 3rem);
+        line-height: 1.08;
+      }
+
+      .contact-intro p {
+        margin: 0 0 30px;
+        color: rgba(255, 255, 255, 0.78);
+      }
+
+      .contact-details {
+        padding: 46px 52px;
+        display: grid;
+        gap: 0;
+      }
+
+      .contact-row {
+        padding: 19px 0;
+        display: grid;
+        grid-template-columns: 110px 1fr;
+        gap: 24px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .contact-row:last-child {
+        border-bottom: 0;
+      }
+
+      .contact-row strong {
+        color: var(--green-800);
+        font-size: 0.8rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .contact-row a:hover {
+        color: var(--green-700);
+        text-decoration: underline;
+      }
+
+      footer {
+        padding: 34px 0;
+        color: rgba(255, 255, 255, 0.72);
+        background: #071f16;
+      }
+
+      .footer-grid {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        font-size: 0.88rem;
+      }
+
+      .footer-links {
+        display: flex;
+        gap: 22px;
+      }
+
+      .footer-links a:hover {
+        color: var(--white);
+      }
+
+      .whatsapp-float {
+        position: fixed;
+        right: 22px;
+        bottom: 22px;
+        z-index: 40;
+        min-height: 54px;
+        padding: 0 19px;
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        color: var(--white);
+        background: #128c4a;
+        border: 2px solid var(--white);
+        border-radius: 999px;
+        box-shadow: 0 14px 36px rgba(8, 70, 39, 0.34);
+        font-weight: 800;
+      }
+
+      .whatsapp-float:hover {
+        background: #0d783e;
+      }
+
+      @media (max-width: 900px) {
+        .menu-toggle {
+          display: grid;
+          place-items: center;
+        }
+
         .nav-links {
+          position: fixed;
+          inset: 78px 0 auto;
+          padding: 24px 20px 28px;
           display: none;
+          align-items: stretch;
+          flex-direction: column;
+          gap: 6px;
+          background: var(--white);
+          border-bottom: 1px solid var(--line);
+          box-shadow: 0 20px 40px rgba(10, 45, 32, 0.12);
+        }
+
+        .nav-links.open {
+          display: flex;
+        }
+
+        .nav-links > a:not(.button) {
+          padding: 12px 4px;
+        }
+
+        .hero {
+          min-height: 650px;
+        }
+
+        .hero::after {
+          background: linear-gradient(90deg, rgba(7, 35, 24, 0.94), rgba(10, 45, 32, 0.68));
+        }
+
+        .hero-proof {
+          display: none;
+        }
+
+        .trust-grid {
+          grid-template-columns: 1fr;
+          padding: 12px 0;
+        }
+
+        .trust-item {
+          padding: 16px 0;
+          border-right: 0;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+        }
+
+        .trust-item:last-child {
+          border-bottom: 0;
+        }
+
+        .services-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .process-layout,
+        .about-grid,
+        .contact-panel {
+          grid-template-columns: 1fr;
+          gap: 45px;
+        }
+
+        .process-layout .section-heading {
+          position: static;
+        }
+
+        .about-logo {
+          max-width: 220px;
+        }
+
+        .contact-panel {
+          gap: 0;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .container {
+          width: min(100% - 28px, 1160px);
+        }
+
+        .brand-copy span {
+          display: none;
+        }
+
+        .brand-copy strong {
+          max-width: 190px;
+          font-size: 0.94rem;
+        }
+
+        .brand img {
+          width: 44px;
+          height: 44px;
+        }
+
+        .nav {
+          min-height: 70px;
+        }
+
+        .nav-links {
+          inset-block-start: 70px;
+        }
+
+        .hero {
+          min-height: auto;
+        }
+
+        .hero::before {
+          background-position: 61% center;
+        }
+
+        .hero-content {
+          padding: 88px 0;
+        }
+
+        .hero h1 {
+          font-size: clamp(2.45rem, 13vw, 3.5rem);
+        }
+
+        .hero-actions,
+        .hero-actions .button {
+          width: 100%;
+        }
+
+        .services,
+        .process-section,
+        .about,
+        .contact {
+          padding: 78px 0;
+        }
+
+        .services-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .service-card {
+          min-height: auto;
+        }
+
+        .service-index {
+          margin-bottom: 24px;
+        }
+
+        .process-step {
+          grid-template-columns: 54px 1fr;
+          gap: 14px;
+        }
+
+        .step-number {
+          font-size: 2rem;
+        }
+
+        .contact-intro,
+        .contact-details {
+          padding: 34px 26px;
+        }
+
+        .contact-row {
+          grid-template-columns: 1fr;
+          gap: 5px;
+        }
+
+        .footer-grid {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .whatsapp-float {
+          right: 14px;
+          bottom: 14px;
+          width: 54px;
+          padding: 0;
+          justify-content: center;
+          font-size: 0;
+        }
+
+        .whatsapp-float::after {
+          content: "WA";
+          font-size: 0.85rem;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        *,
+        *::before,
+        *::after {
+          scroll-behavior: auto !important;
+          transition: none !important;
         }
       }
     </style>
   </head>
+
   <body>
+    <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+
     <header>
       <div class="container nav">
-        <div class="brand">
-          <img class="brand-logo" src="logo.png" alt="Logo J&D Serviços Veterinários" />
-          <div class="brand-text">
-            <small>Serviços veterinários</small>
-            <h1>J&amp;D Serviços Veterinários</h1>
-          </div>
-        </div>
-        <div class="nav-links">
+        <a class="brand" href="#inicio" aria-label="J&D Serviços Veterinários — início">
+          <img src="/logo.png" alt="" width="52" height="52" />
+          <span class="brand-copy">
+            <span>Serviços veterinários</span>
+            <strong>J&amp;D Serviços Veterinários</strong>
+          </span>
+        </a>
+
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-label="Abrir menu"
+          aria-expanded="false"
+          aria-controls="menu-principal"
+        >
+          ☰
+        </button>
+
+        <nav class="nav-links" id="menu-principal" aria-label="Navegação principal">
           <a href="#servicos">Serviços</a>
-          <a href="#processo">Processo</a>
+          <a href="#processo">Como atuamos</a>
+          <a href="#sobre">Sobre</a>
           <a href="#contato">Contato</a>
-          <a class="cta" href="https://wa.me/5516991210700" target="_blank" rel="noreferrer">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M20.52 3.48A11.82 11.82 0 0 0 12 0C5.37 0 0 5.37 0 12c0 2.12.55 4.1 1.51 5.82L0 24l6.33-1.65A11.87 11.87 0 0 0 12 24c6.63 0 12-5.37 12-12 0-3.2-1.25-6.2-3.48-8.52ZM12 22a9.9 9.9 0 0 1-5.06-1.4l-.36-.21-3.76.98 1-3.66-.24-.37A9.93 9.93 0 1 1 22 12c0 5.52-4.48 10-10 10Zm5.38-7.42c-.3-.15-1.76-.87-2.03-.97-.27-.1-.46-.15-.66.15-.2.3-.76.97-.93 1.17-.17.2-.34.22-.64.07-.3-.15-1.27-.47-2.41-1.5-.9-.8-1.5-1.8-1.68-2.1-.17-.3-.02-.46.13-.6.13-.13.3-.34.45-.5.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.66-1.6-.9-2.2-.24-.57-.48-.5-.66-.5-.17 0-.37 0-.57 0-.2 0-.52.07-.8.37-.27.3-1.05 1.03-1.05 2.5 0 1.47 1.08 2.9 1.23 3.1.15.2 2.12 3.24 5.13 4.54.72.31 1.28.5 1.72.64.72.23 1.38.2 1.9.12.58-.09 1.76-.72 2-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35Z" />
-            </svg>
+          <a
+            class="button button-primary"
+            href="https://wa.me/5516991210700?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20os%20servi%C3%A7os%20da%20J%26D."
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Fale no WhatsApp
           </a>
-          <a class="cta facebook" href="https://www.facebook.com/share/1LVeyFBpRG/" target="_blank" rel="noreferrer">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M13.5 8.5V7c0-.83.67-1.5 1.5-1.5H17V2h-2c-2.76 0-5 2.24-5 5v1.5H7v3.5h3V22h3.5V12h3l.5-3.5h-3.5Z" />
-            </svg>
-            Facebook
-          </a>
-        </div>
+        </nav>
       </div>
     </header>
 
-    <main>
-      <section class="container hero">
-        <div>
-          <p class="section-title">Exportação de bovinos vivos</p>
-          <h2>
-            Especialistas em gerenciar a burocracia e a operação da quarentena e
-            habilitação de EPE.
-          </h2>
-          <p>
-            Atuamos com excelência em assistência técnica e responsabilidade
-            sanitária, garantindo conformidade, bem-estar animal e eficiência em
-            cada etapa.
-          </p>
-          <div class="hero-actions">
-            <a class="cta" href="https://wa.me/5516991210700" target="_blank" rel="noreferrer">
-              Solicitar atendimento
-            </a>
-            <a class="outline" href="#contato">Ver contatos</a>
-          </div>
-        </div>
-        <div class="card">
-          <h3 style="font-size: 20px; margin-bottom: 12px;">Compromisso com qualidade e segurança</h3>
-          <p class="muted" style="margin-bottom: 16px;">
-            Monitoramento contínuo, padronização operacional e alinhamento com as
-            exigências do MAPA e do mercado internacional.
-          </p>
-          <div class="list">
-            <div class="list-item">
-              <span class="dot"></span>
-              <p class="muted">Planejamento sanitário e acompanhamento técnico.</p>
-            </div>
-            <div class="list-item">
-              <span class="dot"></span>
-              <p class="muted">Coordenação documental e compliance rigoroso.</p>
-            </div>
-            <div class="list-item">
-              <span class="dot"></span>
-              <p class="muted">Suporte até o embarque com foco em resultados.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="servicos" class="container">
-        <p class="section-title">Serviços</p>
-        <h3 class="section-headline">Atuação completa em cada etapa</h3>
-        <p class="muted" style="margin-bottom: 24px;">
-          Estruturamos processos para exportações seguras e eficientes, com suporte
-          técnico e operacional especializado.
-        </p>
-        <div class="grid-3">
-          <div class="card">
-            <strong>Gestão de quarentena sanitária</strong>
-            <p class="muted">Protocolos oficiais, biosseguridade e monitoramento.</p>
-          </div>
-          <div class="card">
-            <strong>Habilitação e manutenção de EPE</strong>
-            <p class="muted">Adequação e conformidade conforme MAPA.</p>
-          </div>
-          <div class="card">
-            <strong>Planejamento operacional</strong>
-            <p class="muted">Fluxos, equipe, cronogramas e controle de qualidade.</p>
-          </div>
-          <div class="card">
-            <strong>Assistência técnica especializada</strong>
-            <p class="muted">Acompanhamento contínuo e bem-estar animal.</p>
-          </div>
-          <div class="card">
-            <strong>Documentação e compliance</strong>
-            <p class="muted">Organização documental e suporte ao exportador.</p>
-          </div>
-          <div class="card">
-            <strong>Interface com autoridades</strong>
-            <p class="muted">Alinhamento com VIGIAGRO e órgãos reguladores.</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="processo" class="process">
+    <main id="conteudo">
+      <section class="hero" id="inicio" aria-labelledby="hero-title">
         <div class="container">
-          <p class="section-title">Processo</p>
-          <h3 class="section-headline">Método claro, seguro e eficiente</h3>
-          <div class="grid-3">
-            <div class="card">
-              <strong>1. Diagnóstico</strong>
-              <p class="muted">Avaliação do cenário, requisitos e cronograma.</p>
+          <div class="hero-content">
+            <p class="eyebrow">Exportação de bovinos vivos</p>
+            <h1 id="hero-title">Segurança sanitária em cada etapa da operação.</h1>
+            <p class="hero-lead">
+              Gestão de quarentena, habilitação de EPE e assistência técnica com rigor documental,
+              bem-estar animal e alinhamento às exigências do mercado.
+            </p>
+            <div class="hero-actions">
+              <a
+                class="button button-primary"
+                href="https://wa.me/5516991210700?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20atendimento%20da%20J%26D."
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Solicitar atendimento
+              </a>
+              <a class="button button-light" href="#servicos">Conheça os serviços</a>
             </div>
-            <div class="card">
-              <strong>2. Preparação</strong>
-              <p class="muted">Padronização operacional, biosseguridade e documentos.</p>
-            </div>
-            <div class="card">
-              <strong>3. Execução</strong>
-              <p class="muted">Coordenação diária com foco em qualidade e conformidade.</p>
-            </div>
+          </div>
+        </div>
+
+        <div class="hero-proof" aria-label="Compromisso da J&D">
+          <span class="trust-number">J&amp;D</span>
+          <span>
+            <strong>Conformidade e eficiência</strong>
+            Suporte técnico do planejamento ao embarque.
+          </span>
+        </div>
+      </section>
+
+      <section class="trust-strip" aria-label="Áreas de compromisso">
+        <div class="container trust-grid">
+          <div class="trust-item">
+            <span class="trust-number">01</span>
+            <span>Planejamento sanitário e acompanhamento técnico</span>
+          </div>
+          <div class="trust-item">
+            <span class="trust-number">02</span>
+            <span>Documentação e conformidade regulatória</span>
+          </div>
+          <div class="trust-item">
+            <span class="trust-number">03</span>
+            <span>Coordenação operacional com foco em resultados</span>
           </div>
         </div>
       </section>
 
-      <section id="contato" class="container">
-        <div class="card">
-          <p class="section-title">Contato</p>
-          <h3 class="section-headline">Prontos para apoiar sua operação</h3>
-          <p class="muted" style="margin-bottom: 24px;">
-            Entre em contato para conduzir seu processo com segurança, eficiência e
-            responsabilidade.
-          </p>
-          <div class="social-links" style="margin-bottom: 20px;">
-            <span class="muted">Siga a J&amp;D:</span>
-            <a href="https://www.facebook.com/share/1LVeyFBpRG/" target="_blank" rel="noreferrer">
-              Facebook
-            </a>
+      <section class="services" id="servicos">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Serviços especializados</p>
+            <h2>Atuação completa para operações seguras e eficientes</h2>
+            <p>
+              Integramos conhecimento veterinário, organização documental e gestão operacional para
+              apoiar exportadores em todas as fases do processo.
+            </p>
           </div>
-          <div class="contact-card">
-            <div class="card" style="box-shadow: none;">
-              <strong>Telefone</strong>
-              <p class="muted">
-                <a href="tel:5516991210700">+55 16 99121-0700</a>
+
+          <div class="services-grid">
+            <article class="service-card">
+              <span class="service-index">01</span>
+              <h3>Gestão de quarentena sanitária</h3>
+              <p>Protocolos oficiais, biosseguridade, rotina sanitária e monitoramento contínuo.</p>
+            </article>
+            <article class="service-card">
+              <span class="service-index">02</span>
+              <h3>Habilitação e manutenção de EPE</h3>
+              <p>Adequação da estrutura e dos processos às exigências aplicáveis do MAPA.</p>
+            </article>
+            <article class="service-card">
+              <span class="service-index">03</span>
+              <h3>Planejamento operacional</h3>
+              <p>Definição de fluxos, equipes, cronogramas e pontos de controle de qualidade.</p>
+            </article>
+            <article class="service-card">
+              <span class="service-index">04</span>
+              <h3>Assistência técnica especializada</h3>
+              <p>Acompanhamento veterinário com atenção à saúde e ao bem-estar animal.</p>
+            </article>
+            <article class="service-card">
+              <span class="service-index">05</span>
+              <h3>Documentação e compliance</h3>
+              <p>Organização documental, rastreabilidade e suporte técnico ao exportador.</p>
+            </article>
+            <article class="service-card">
+              <span class="service-index">06</span>
+              <h3>Interface com autoridades</h3>
+              <p>Alinhamento com VIGIAGRO e demais órgãos envolvidos na operação.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="process-section" id="processo">
+        <div class="container process-layout">
+          <div class="section-heading">
+            <p class="eyebrow">Como atuamos</p>
+            <h2>Método claro, seguro e orientado à execução</h2>
+            <p>
+              Cada operação é conduzida com diagnóstico, preparação criteriosa e acompanhamento
+              próximo até sua conclusão.
+            </p>
+          </div>
+
+          <div class="process-steps">
+            <article class="process-step">
+              <span class="step-number">01</span>
+              <div>
+                <h3>Diagnóstico</h3>
+                <p>Avaliação do cenário, requisitos sanitários, estrutura disponível e cronograma.</p>
+              </div>
+            </article>
+            <article class="process-step">
+              <span class="step-number">02</span>
+              <div>
+                <h3>Preparação</h3>
+                <p>Padronização operacional, organização documental e protocolos de biosseguridade.</p>
+              </div>
+            </article>
+            <article class="process-step">
+              <span class="step-number">03</span>
+              <div>
+                <h3>Execução</h3>
+                <p>Coordenação diária, assistência veterinária e controle dos pontos críticos.</p>
+              </div>
+            </article>
+            <article class="process-step">
+              <span class="step-number">04</span>
+              <div>
+                <h3>Acompanhamento</h3>
+                <p>Suporte técnico, comunicação e verificação de conformidade até o embarque.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="about" id="sobre">
+        <div class="container about-grid">
+          <div class="about-logo">
+            <img src="/logo.png" alt="Marca J&D Serviços Veterinários" width="512" height="512" loading="lazy" />
+          </div>
+          <div>
+            <p class="eyebrow">Sobre a J&amp;D</p>
+            <h2>Conhecimento técnico a serviço de uma operação responsável</h2>
+            <p>
+              A J&amp;D Serviços Veterinários apoia operações de exportação de bovinos vivos com
+              organização, segurança sanitária e compromisso com o bem-estar animal.
+            </p>
+            <ul class="about-list">
+              <li>Atendimento próximo e comunicação objetiva</li>
+              <li>Rigor técnico e documental em todas as etapas</li>
+              <li>Integração entre campo, gestão e órgãos reguladores</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact" id="contato">
+        <div class="container">
+          <div class="contact-panel">
+            <div class="contact-intro">
+              <p class="eyebrow">Entre em contato</p>
+              <h2>Vamos planejar sua próxima operação?</h2>
+              <p>
+                Fale diretamente com a J&amp;D para apresentar sua necessidade e receber uma
+                orientação inicial.
               </p>
+              <a
+                class="button button-primary"
+                href="https://wa.me/5516991210700?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20falar%20sobre%20uma%20opera%C3%A7%C3%A3o."
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Conversar pelo WhatsApp
+              </a>
             </div>
-            <div class="card" style="box-shadow: none;">
-              <strong>E-mail</strong>
-              <p class="muted">
+
+            <address class="contact-details">
+              <div class="contact-row">
+                <strong>Telefone</strong>
+                <a href="tel:+5516991210700">+55 16 99121-0700</a>
+              </div>
+              <div class="contact-row">
+                <strong>E-mail</strong>
                 <a href="mailto:jdservicosveterinarios@gmail.com">jdservicosveterinarios@gmail.com</a>
-              </p>
-            </div>
-            <div class="card" style="box-shadow: none;">
-              <strong>Endereço</strong>
-              <p class="muted">Capitão Alberto Mendes Junior 510, São Carlos, SP</p>
-            </div>
+              </div>
+              <div class="contact-row">
+                <strong>Endereço</strong>
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=Capit%C3%A3o%20Alberto%20Mendes%20Junior%20510%20S%C3%A3o%20Carlos%20SP"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Capitão Alberto Mendes Junior, 510<br />São Carlos, SP
+                </a>
+              </div>
+              <div class="contact-row">
+                <strong>Redes sociais</strong>
+                <a href="https://www.facebook.com/share/1LVeyFBpRG/" target="_blank" rel="noopener noreferrer">
+                  Acompanhe a J&amp;D no Facebook
+                </a>
+              </div>
+            </address>
           </div>
         </div>
       </section>
     </main>
 
     <footer>
-      <div class="container">
-        J&amp;D Serviços Veterinários • Exportação de bovinos vivos
+      <div class="container footer-grid">
+        <span>© <span id="ano"></span> J&amp;D Serviços Veterinários. Todos os direitos reservados.</span>
+        <nav class="footer-links" aria-label="Links do rodapé">
+          <a href="#servicos">Serviços</a>
+          <a href="#contato">Contato</a>
+        </nav>
       </div>
     </footer>
+
+    <a
+      class="whatsapp-float"
+      href="https://wa.me/5516991210700?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20J%26D."
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Falar com a J&D pelo WhatsApp"
+    >
+      WhatsApp
+    </a>
+
+    <script>
+      const menuButton = document.querySelector(".menu-toggle");
+      const menu = document.querySelector(".nav-links");
+
+      function closeMenu() {
+        menu.classList.remove("open");
+        menuButton.setAttribute("aria-expanded", "false");
+        menuButton.setAttribute("aria-label", "Abrir menu");
+        menuButton.textContent = "☰";
+        document.body.classList.remove("menu-open");
+      }
+
+      menuButton.addEventListener("click", () => {
+        const isOpen = menu.classList.toggle("open");
+        menuButton.setAttribute("aria-expanded", String(isOpen));
+        menuButton.setAttribute("aria-label", isOpen ? "Fechar menu" : "Abrir menu");
+        menuButton.textContent = isOpen ? "×" : "☰";
+        document.body.classList.toggle("menu-open", isOpen);
+      });
+
+      menu.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
+      window.addEventListener("resize", () => {
+        if (window.innerWidth > 900) closeMenu();
+      });
+
+      document.getElementById("ano").textContent = new Date().getFullYear();
+    </script>
   </body>
 </html>
