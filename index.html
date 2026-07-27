@@ -39,6 +39,8 @@
         "@context": "https://schema.org",
         "@type": "ProfessionalService",
         "name": "J&D Serviços Veterinários",
+        "legalName": "J&D Serviços Veterinários Ltda.",
+        "taxID": "48.906.029/0001-63",
         "url": "https://jdservicosveterinarios.com.br/",
         "logo": "https://jdservicosveterinarios.com.br/logo.png",
         "image": "https://jdservicosveterinarios.com.br/og.jpg",
@@ -54,6 +56,15 @@
           "addressCountry": "BR"
         },
         "areaServed": "Brasil",
+        "employee": {
+          "@type": "Person",
+          "name": "Daniele Sleutjes Casale",
+          "jobTitle": "Responsável técnica",
+          "hasCredential": {
+            "@type": "EducationalOccupationalCredential",
+            "credentialCategory": "CRMV/SP 32.582"
+          }
+        },
         "sameAs": ["https://www.facebook.com/share/1cux1fBRZz/"]
       }
     </script>
@@ -700,6 +711,33 @@
         font-weight: 900;
       }
 
+      .company-credentials {
+        margin-top: 30px;
+        padding: 22px;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px 24px;
+        background: rgba(255, 255, 255, 0.07);
+        border: 1px solid rgba(255, 255, 255, 0.13);
+        border-radius: 14px;
+      }
+
+      .company-credentials div {
+        display: grid;
+        gap: 3px;
+      }
+
+      .company-credentials strong {
+        color: var(--gold-light);
+        font-size: 0.72rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      .company-credentials span {
+        color: rgba(255, 255, 255, 0.9);
+      }
+
       .contact {
         position: relative;
         padding: 110px 0;
@@ -1045,6 +1083,10 @@
           grid-template-columns: 1fr;
         }
 
+        .company-credentials {
+          grid-template-columns: 1fr;
+        }
+
         .process-step {
           grid-template-columns: 54px 1fr;
           gap: 14px;
@@ -1336,6 +1378,12 @@
               <li>Integração entre campo, gestão e órgãos reguladores</li>
               <li>Suporte em defesas administrativas perante as SEFAZ estaduais</li>
             </ul>
+            <div class="company-credentials" aria-label="Dados institucionais da J&D">
+              <div><strong>Razão social</strong><span>J&amp;D Serviços Veterinários Ltda.</span></div>
+              <div><strong>CNPJ</strong><span>48.906.029/0001-63</span></div>
+              <div><strong>Representante</strong><span>Julio Cesar Benedito</span></div>
+              <div><strong>Responsável técnica</strong><span>Dra. Daniele Sleutjes Casale — CRMV/SP 32.582</span></div>
+            </div>
           </div>
         </div>
       </section>
