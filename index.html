@@ -12,6 +12,7 @@
     <meta name="robots" content="index,follow,max-image-preview:large" />
     <link rel="canonical" href="https://jdservicosveterinarios.com.br/" />
     <link rel="icon" href="/logo.png" type="image/png" />
+    <link rel="preload" href="/background-sharp.webp" as="image" type="image/webp" />
 
     <meta property="og:locale" content="pt_BR" />
     <meta property="og:type" content="website" />
@@ -292,7 +293,7 @@
         position: absolute;
         inset: 0;
         z-index: -1;
-        background: url("/background.jpg") center 46% / cover no-repeat;
+        background: url("/background-sharp.webp") center 46% / cover no-repeat;
         clip-path: ellipse(55% 108% at 100% 50%);
       }
 
@@ -794,6 +795,57 @@
         background: #0d783e;
       }
 
+      .ad-rail {
+        position: fixed;
+        top: 285px;
+        z-index: 8;
+        width: 190px;
+        min-height: 300px;
+        padding: 24px 18px;
+        display: none;
+        align-content: center;
+        justify-items: center;
+        gap: 10px;
+        color: var(--muted);
+        text-align: center;
+        background: rgba(255, 255, 255, 0.9);
+        border: 1px dashed #b8c9bd;
+        border-radius: 16px;
+        box-shadow: 0 12px 35px rgba(10, 45, 32, 0.07);
+        backdrop-filter: blur(8px);
+      }
+
+      .ad-rail-left {
+        left: max(24px, calc(50vw - 900px));
+      }
+
+      .ad-rail-right {
+        right: max(24px, calc(50vw - 900px));
+      }
+
+      .ad-rail strong {
+        color: var(--green-900);
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 1.05rem;
+      }
+
+      .ad-rail span {
+        font-size: 0.78rem;
+      }
+
+      .ad-rail a {
+        margin-top: 5px;
+        color: var(--green-700);
+        font-size: 0.78rem;
+        font-weight: 900;
+      }
+
+      @media (min-width: 1650px) {
+        .ad-rail {
+          display: grid;
+        }
+      }
+
       @media (max-width: 900px) {
         .menu-toggle {
           display: grid;
@@ -1067,6 +1119,19 @@
         </nav>
       </div>
     </header>
+
+    <aside class="ad-rail ad-rail-left" aria-label="Espaço publicitário lateral">
+      <span>PUBLICIDADE</span>
+      <strong>Espaço para parceiros</strong>
+      <span>Área reservada para divulgação de marcas e serviços.</span>
+      <a href="https://wa.me/5516997741402?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20espa%C3%A7o%20publicit%C3%A1rio%20do%20site%20da%20J%26D." target="_blank" rel="noopener noreferrer">Anuncie aqui</a>
+    </aside>
+    <aside class="ad-rail ad-rail-right" aria-label="Espaço publicitário lateral">
+      <span>PUBLICIDADE</span>
+      <strong>Sua marca pode estar aqui</strong>
+      <span>Visibilidade ao lado de conteúdo veterinário especializado.</span>
+      <a href="https://wa.me/5516997741402?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20espa%C3%A7o%20publicit%C3%A1rio%20do%20site%20da%20J%26D." target="_blank" rel="noopener noreferrer">Falar com a J&amp;D</a>
+    </aside>
 
     <main id="conteudo">
       <section class="hero" id="inicio" aria-labelledby="hero-title">
