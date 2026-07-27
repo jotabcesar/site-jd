@@ -690,8 +690,62 @@
       }
 
       .contact {
+        position: relative;
         padding: 110px 0;
         background: var(--cream);
+      }
+
+      .partner-rail {
+        position: absolute;
+        top: 110px;
+        width: 190px;
+        display: none;
+        gap: 14px;
+      }
+
+      .partner-rail-left {
+        left: max(24px, calc(50vw - 900px));
+      }
+
+      .partner-rail-right {
+        right: max(24px, calc(50vw - 900px));
+      }
+
+      .partner-rail-title {
+        color: var(--green-900);
+        font-size: 0.72rem;
+        font-weight: 900;
+        letter-spacing: 0.14em;
+        text-align: center;
+        text-transform: uppercase;
+      }
+
+      .partner-placeholder {
+        min-height: 104px;
+        padding: 14px;
+        display: grid;
+        place-items: center;
+        color: var(--muted);
+        text-align: center;
+        background: rgba(255, 255, 255, 0.88);
+        border: 1px dashed #b8c9bd;
+        border-radius: 14px;
+        font-size: 0.76rem;
+        line-height: 1.4;
+      }
+
+      .partner-placeholder::before {
+        content: "+";
+        display: block;
+        color: var(--green-700);
+        font-size: 1.35rem;
+        font-weight: 400;
+      }
+
+      @media (min-width: 1650px) {
+        .partner-rail {
+          display: grid;
+        }
       }
 
       .contact-panel {
@@ -1320,6 +1374,18 @@
       </section>
 
       <section class="contact" id="contato">
+        <aside class="partner-rail partner-rail-left" aria-label="Logotipos de parceiros à esquerda">
+          <span class="partner-rail-title">Nossos parceiros</span>
+          <div class="partner-placeholder">Logo do parceiro</div>
+          <div class="partner-placeholder">Logo do parceiro</div>
+          <div class="partner-placeholder">Logo do parceiro</div>
+        </aside>
+        <aside class="partner-rail partner-rail-right" aria-label="Logotipos de parceiros à direita">
+          <span class="partner-rail-title">Nossos parceiros</span>
+          <div class="partner-placeholder">Logo do parceiro</div>
+          <div class="partner-placeholder">Logo do parceiro</div>
+          <div class="partner-placeholder">Logo do parceiro</div>
+        </aside>
         <div class="container">
           <div class="contact-panel">
             <div class="contact-intro">
