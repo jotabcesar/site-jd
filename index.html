@@ -855,57 +855,6 @@
         background: #0d783e;
       }
 
-      .ad-rail {
-        position: absolute;
-        top: 118px;
-        z-index: 8;
-        width: 190px;
-        min-height: 300px;
-        padding: 24px 18px;
-        display: none;
-        align-content: center;
-        justify-items: center;
-        gap: 10px;
-        color: var(--muted);
-        text-align: center;
-        background: rgba(255, 255, 255, 0.9);
-        border: 1px dashed #b8c9bd;
-        border-radius: 16px;
-        box-shadow: 0 12px 35px rgba(10, 45, 32, 0.07);
-        backdrop-filter: blur(8px);
-      }
-
-      .ad-rail-left {
-        left: max(24px, calc(50vw - 900px));
-      }
-
-      .ad-rail-right {
-        right: max(24px, calc(50vw - 900px));
-      }
-
-      .ad-rail strong {
-        color: var(--green-900);
-        font-family: Georgia, "Times New Roman", serif;
-        font-size: 1.05rem;
-      }
-
-      .ad-rail span {
-        font-size: 0.78rem;
-      }
-
-      .ad-rail a {
-        margin-top: 5px;
-        color: var(--green-700);
-        font-size: 0.78rem;
-        font-weight: 900;
-      }
-
-      @media (min-width: 1650px) {
-        .ad-rail {
-          display: grid;
-        }
-      }
-
       @media (max-width: 900px) {
         .menu-toggle {
           display: grid;
@@ -1165,6 +1114,7 @@
         <nav class="nav-links" id="menu-principal" aria-label="Navegação principal">
           <a href="#servicos">Serviços</a>
           <a href="#sefaz">Defesas SEFAZ</a>
+          <a href="/conteudos.html">Conteúdos</a>
           <a href="#processo">Como atuamos</a>
           <a href="#sobre">Sobre</a>
           <a href="#contato">Contato</a>
@@ -1226,18 +1176,6 @@
       </section>
 
       <section class="services" id="servicos">
-        <aside class="ad-rail ad-rail-left" aria-label="Espaço publicitário lateral">
-          <span>PUBLICIDADE</span>
-          <strong>Espaço para parceiros</strong>
-          <span>Área reservada para divulgação de marcas e serviços.</span>
-          <a href="https://wa.me/5516997741402?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20espa%C3%A7o%20publicit%C3%A1rio%20do%20site%20da%20J%26D." target="_blank" rel="noopener noreferrer">Anuncie aqui</a>
-        </aside>
-        <aside class="ad-rail ad-rail-right" aria-label="Espaço publicitário lateral">
-          <span>PUBLICIDADE</span>
-          <strong>Sua marca pode estar aqui</strong>
-          <span>Visibilidade ao lado de conteúdo veterinário especializado.</span>
-          <a href="https://wa.me/5516997741402?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20espa%C3%A7o%20publicit%C3%A1rio%20do%20site%20da%20J%26D." target="_blank" rel="noopener noreferrer">Falar com a J&amp;D</a>
-        </aside>
         <div class="container">
           <div class="section-heading">
             <p class="eyebrow">Serviços especializados</p>
@@ -1351,6 +1289,23 @@
         </div>
       </section>
 
+      <section class="services" id="conteudos-preview" aria-labelledby="conteudos-title">
+        <div class="container">
+          <div class="section-heading">
+            <p class="eyebrow">Conteúdo técnico</p>
+            <h2 id="conteudos-title">Informação útil para decisões mais bem preparadas</h2>
+            <p>Artigos originais sobre sanidade, exportação, documentação, exames e bem-estar animal.</p>
+          </div>
+          <div class="services-grid">
+            <a class="service-card reveal" href="/conteudos/quarentena-bovinos-exportacao.html"><span class="service-index">Guia</span><h3>Como funciona uma quarentena de bovinos</h3><p>Planejamento, isolamento, registros e liberação antes da exportação.</p></a>
+            <a class="service-card reveal" href="/conteudos/o-que-e-epe-etapas.html"><span class="service-index">EPE</span><h3>O que é uma EPE e quais são suas etapas</h3><p>Estrutura, habilitação, procedimentos e operação segura.</p></a>
+            <a class="service-card reveal" href="/conteudos/quando-solicitar-exames-laboratoriais-pets.html"><span class="service-index">Pets</span><h3>Quando solicitar exames laboratoriais</h3><p>Prevenção, diagnóstico, acompanhamento e preparo.</p></a>
+            <a class="service-card reveal" href="/conteudos/rastreabilidade-fiscal-sanitaria-aduaneira.html"><span class="service-index">Fiscal</span><h3>Rastreabilidade fiscal, sanitária e aduaneira</h3><p>Como conectar documentos e preservar a cadeia de evidências.</p></a>
+          </div>
+          <p style="margin-top:28px"><a class="button button-primary" href="/conteudos.html">Ver todos os conteúdos</a></p>
+        </div>
+      </section>
+
       <section class="about" id="sobre">
         <div class="container about-grid">
           <div class="about-logo">
@@ -1375,13 +1330,13 @@
 
       <section class="contact" id="contato">
         <aside class="partner-rail partner-rail-left" aria-label="Logotipos de parceiros à esquerda">
-          <span class="partner-rail-title">Nossos parceiros</span>
+          <span class="partner-rail-title">Parceiros</span>
           <div class="partner-placeholder">Logo do parceiro</div>
           <div class="partner-placeholder">Logo do parceiro</div>
           <div class="partner-placeholder">Logo do parceiro</div>
         </aside>
         <aside class="partner-rail partner-rail-right" aria-label="Logotipos de parceiros à direita">
-          <span class="partner-rail-title">Nossos parceiros</span>
+          <span class="partner-rail-title">Parceiros</span>
           <div class="partner-placeholder">Logo do parceiro</div>
           <div class="partner-placeholder">Logo do parceiro</div>
           <div class="partner-placeholder">Logo do parceiro</div>
@@ -1445,7 +1400,11 @@
         <span>© <span id="ano"></span> J&amp;D Serviços Veterinários. Todos os direitos reservados.</span>
         <nav class="footer-links" aria-label="Links do rodapé">
           <a href="#servicos">Serviços</a>
+          <a href="/conteudos.html">Conteúdos</a>
           <a href="#contato">Contato</a>
+          <a href="/politica-de-privacidade.html">Privacidade</a>
+          <a href="/politica-de-cookies.html">Cookies</a>
+          <a href="/termos-de-uso.html">Termos</a>
         </nav>
       </div>
     </footer>
