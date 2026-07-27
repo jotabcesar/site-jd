@@ -7,7 +7,7 @@
     <title>J&amp;D Serviços Veterinários | Quarentena e habilitação de EPE</title>
     <meta
       name="description"
-      content="Gestão de quarentena, habilitação de EPE, assistência veterinária e suporte técnico-documental em defesas administrativas perante a SEFAZ em todo o Brasil."
+      content="Gestão de quarentena, habilitação de EPE, assistência veterinária, exames laboratoriais para pets e grandes animais e suporte técnico-documental em todo o Brasil."
     />
     <meta name="robots" content="index,follow,max-image-preview:large" />
     <link rel="canonical" href="https://jdservicosveterinarios.com.br/" />
@@ -36,13 +36,14 @@
         "url": "https://jdservicosveterinarios.com.br/",
         "logo": "https://jdservicosveterinarios.com.br/logo.png",
         "image": "https://jdservicosveterinarios.com.br/og.jpg",
-        "description": "Gestão de quarentena, habilitação de EPE, assistência veterinária e suporte técnico-documental em defesas administrativas perante Secretarias de Fazenda estaduais.",
-        "telephone": "+55-16-99121-0700",
+        "description": "Gestão de quarentena, habilitação de EPE, assistência veterinária, exames laboratoriais para pets e grandes animais e suporte técnico-documental.",
+        "telephone": ["+55-16-99774-1402", "+55-16-98148-6324"],
         "email": "jdservicosveterinarios@gmail.com",
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "Capitão Alberto Mendes Junior, 510",
-          "addressLocality": "São Carlos",
+          "streetAddress": "Rua Antonio Francisco Nicolau Gonzales Rodrigues, 208, Jardim Casanova",
+          "postalCode": "18195-158",
+          "addressLocality": "Capela do Alto",
           "addressRegion": "SP",
           "addressCountry": "BR"
         },
@@ -433,6 +434,7 @@
       }
 
       .service-card {
+        position: relative;
         min-height: 220px;
         padding: 28px;
         background: var(--white);
@@ -472,6 +474,41 @@
         margin: 0;
         color: var(--muted);
         font-size: 0.94rem;
+      }
+
+      .service-card::after {
+        content: "Ver detalhes →";
+        position: absolute;
+        right: 28px;
+        bottom: 24px;
+        color: var(--green-700);
+        font-size: 0.82rem;
+        font-weight: 800;
+        opacity: 0;
+        transform: translateX(-8px);
+        transition: opacity 180ms ease, transform 180ms ease;
+      }
+
+      .service-card:hover::after,
+      .service-card:focus-visible::after {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      .service-card:focus-visible {
+        outline: 3px solid var(--gold);
+        outline-offset: 4px;
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(22px);
+        transition: opacity 600ms ease, transform 600ms ease;
+      }
+
+      .reveal.visible {
+        opacity: 1;
+        transform: none;
       }
 
       .sefaz-service {
@@ -1021,7 +1058,7 @@
           <a href="#contato">Contato</a>
           <a
             class="button button-primary"
-            href="https://wa.me/5516991210700?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20os%20servi%C3%A7os%20da%20J%26D."
+            href="https://wa.me/5516997741402?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20os%20servi%C3%A7os%20da%20J%26D."
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -1046,7 +1083,7 @@
             <div class="hero-actions">
               <a
                 class="button button-primary"
-                href="https://wa.me/5516991210700?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20atendimento%20da%20J%26D."
+                href="https://wa.me/5516997741402?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20atendimento%20da%20J%26D."
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -1057,13 +1094,6 @@
           </div>
         </div>
 
-        <div class="hero-proof" aria-label="Compromisso da J&D">
-          <span class="trust-number">J&amp;D</span>
-          <span>
-            <strong>Conformidade e eficiência</strong>
-            Suporte técnico do planejamento ao embarque.
-          </span>
-        </div>
       </section>
 
       <section class="trust-strip" aria-label="Áreas de compromisso">
@@ -1095,36 +1125,41 @@
           </div>
 
           <div class="services-grid">
-            <article class="service-card">
+            <a class="service-card reveal" href="/servicos.html#quarentena">
               <span class="service-index">01</span>
               <h3>Gestão de quarentena sanitária</h3>
               <p>Protocolos oficiais, biosseguridade, rotina sanitária e monitoramento contínuo.</p>
-            </article>
-            <article class="service-card">
+            </a>
+            <a class="service-card reveal" href="/servicos.html#epe">
               <span class="service-index">02</span>
               <h3>Habilitação e manutenção de EPE</h3>
               <p>Adequação da estrutura e dos processos às exigências aplicáveis do MAPA.</p>
-            </article>
-            <article class="service-card">
+            </a>
+            <a class="service-card reveal" href="/servicos.html#planejamento">
               <span class="service-index">03</span>
               <h3>Planejamento operacional</h3>
               <p>Definição de fluxos, equipes, cronogramas e pontos de controle de qualidade.</p>
-            </article>
-            <article class="service-card">
+            </a>
+            <a class="service-card reveal" href="/servicos.html#assistencia">
               <span class="service-index">04</span>
               <h3>Assistência técnica especializada</h3>
               <p>Acompanhamento veterinário com atenção à saúde e ao bem-estar animal.</p>
-            </article>
-            <article class="service-card">
+            </a>
+            <a class="service-card reveal" href="/servicos.html#documentacao">
               <span class="service-index">05</span>
               <h3>Documentação e compliance</h3>
               <p>Organização documental, rastreabilidade e suporte técnico ao exportador.</p>
-            </article>
-            <article class="service-card">
+            </a>
+            <a class="service-card reveal" href="/servicos.html#autoridades">
               <span class="service-index">06</span>
               <h3>Interface com autoridades</h3>
               <p>Alinhamento com VIGIAGRO e demais órgãos envolvidos na operação.</p>
-            </article>
+            </a>
+            <a class="service-card reveal" href="/servicos.html#laboratorio">
+              <span class="service-index">07</span>
+              <h3>Exames laboratoriais</h3>
+              <p>Exames para pets e animais de grande porte, com orientação técnica e atendimento cuidadoso.</p>
+            </a>
           </div>
 
           <article class="sefaz-service" id="sefaz">
@@ -1226,7 +1261,7 @@
               </p>
               <a
                 class="button button-primary"
-                href="https://wa.me/5516991210700?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20falar%20sobre%20uma%20opera%C3%A7%C3%A3o."
+                href="https://wa.me/5516997741402?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20falar%20sobre%20os%20servi%C3%A7os%20da%20J%26D."
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -1236,8 +1271,11 @@
 
             <address class="contact-details">
               <div class="contact-row">
-                <strong>Telefone</strong>
-                <a href="tel:+5516991210700">+55 16 99121-0700</a>
+                <strong>WhatsApp</strong>
+                <span>
+                  <a href="https://wa.me/5516997741402" target="_blank" rel="noopener noreferrer">+55 16 99774-1402</a><br />
+                  <a href="https://wa.me/5516981486324" target="_blank" rel="noopener noreferrer">+55 16 98148-6324</a>
+                </span>
               </div>
               <div class="contact-row">
                 <strong>E-mail</strong>
@@ -1246,11 +1284,12 @@
               <div class="contact-row">
                 <strong>Endereço</strong>
                 <a
-                  href="https://www.google.com/maps/search/?api=1&query=Capit%C3%A3o%20Alberto%20Mendes%20Junior%20510%20S%C3%A3o%20Carlos%20SP"
+                  href="https://www.google.com/maps/search/?api=1&query=Rua%20Antonio%20Francisco%20Nicolau%20Gonzales%20Rodrigues%20208%20Jardim%20Casanova%20Capela%20do%20Alto%20SP%2018195-158"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Capitão Alberto Mendes Junior, 510<br />São Carlos, SP
+                  CEP 18195-158<br />Rua Antonio Francisco Nicolau Gonzales Rodrigues, 208<br />
+                  Jardim Casanova — Capela do Alto, SP
                 </a>
               </div>
               <div class="contact-row">
@@ -1277,7 +1316,7 @@
 
     <a
       class="whatsapp-float"
-      href="https://wa.me/5516991210700?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20J%26D."
+      href="https://wa.me/5516997741402?text=Ol%C3%A1%2C%20vim%20pelo%20site%20da%20J%26D."
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Falar com a J&D pelo WhatsApp"
@@ -1309,6 +1348,23 @@
       window.addEventListener("resize", () => {
         if (window.innerWidth > 900) closeMenu();
       });
+
+      if ("IntersectionObserver" in window) {
+        const revealObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                revealObserver.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.12 }
+        );
+        document.querySelectorAll(".reveal").forEach((element) => revealObserver.observe(element));
+      } else {
+        document.querySelectorAll(".reveal").forEach((element) => element.classList.add("visible"));
+      }
 
       document.getElementById("ano").textContent = new Date().getFullYear();
     </script>
