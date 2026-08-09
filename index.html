@@ -246,6 +246,7 @@
 
       .brand-copy {
         line-height: 1.2;
+        white-space: nowrap;
       }
 
       .brand-copy strong {
@@ -266,13 +267,59 @@
       .nav-links {
         display: flex;
         align-items: center;
-        gap: 26px;
+        gap: 18px;
+      }
+
+      .nav-more {
+        position: relative;
+      }
+
+      .nav-more summary {
+        list-style: none;
+        cursor: pointer;
+        color: #3c4e44;
+        font-size: 0.92rem;
+        font-weight: 700;
+      }
+
+      .nav-more summary::-webkit-details-marker {
+        display: none;
+      }
+
+      .nav-more summary::after {
+        content: " +";
+        color: var(--green-700);
+      }
+
+      .nav-submenu {
+        position: absolute;
+        top: calc(100% + 14px);
+        right: 0;
+        min-width: 180px;
+        padding: 10px;
+        display: grid;
+        gap: 4px;
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        box-shadow: var(--shadow);
+      }
+
+      .nav-submenu a {
+        padding: 10px 12px;
+        border-radius: 8px;
+        white-space: nowrap;
+      }
+
+      .nav-submenu a:hover {
+        background: var(--green-100);
       }
 
       .nav-links > a:not(.button) {
         color: #3c4e44;
-        font-size: 0.92rem;
+        font-size: 0.88rem;
         font-weight: 700;
+        white-space: nowrap;
       }
 
       .nav-links > a:not(.button):hover {
@@ -295,6 +342,7 @@
 
       .hero {
         position: relative;
+        isolation: isolate;
         min-height: 630px;
         display: grid;
         align-items: center;
@@ -327,15 +375,15 @@
       }
 
       .hero-content {
-        width: 44%;
-        max-width: 580px;
+        width: 41%;
+        max-width: 535px;
         padding: 68px 0 76px;
       }
 
       .hero-brand {
         width: 112px;
         height: 112px;
-        margin-bottom: 24px;
+        margin: 6px 0 24px;
         object-fit: contain;
         border-radius: 50%;
         box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.16), 0 16px 34px rgba(0, 0, 0, 0.2);
@@ -365,7 +413,7 @@
       }
 
       .hero-lead {
-        max-width: 620px;
+        max-width: 520px;
         margin: 0 0 32px;
         color: rgba(255, 255, 255, 0.9);
         font-size: clamp(1.05rem, 2vw, 1.25rem);
@@ -453,8 +501,11 @@
 
       .service-card {
         position: relative;
-        min-height: 220px;
+        min-height: 278px;
+        height: 278px;
         padding: 28px;
+        display: flex;
+        flex-direction: column;
         background: var(--white);
         border: 1px solid var(--line);
         border-radius: 16px;
@@ -489,28 +540,26 @@
       }
 
       .service-card p {
-        margin: 0;
+        margin: 0 0 22px;
         color: var(--muted);
         font-size: 0.94rem;
       }
 
       .service-card::after {
         content: "Ver detalhes →";
-        position: absolute;
-        right: 28px;
-        bottom: 24px;
+        margin-top: auto;
+        align-self: flex-end;
         color: var(--green-700);
         font-size: 0.82rem;
         font-weight: 800;
-        opacity: 0;
-        transform: translateX(-8px);
+        opacity: 0.82;
         transition: opacity 180ms ease, transform 180ms ease;
       }
 
       .service-card:hover::after,
       .service-card:focus-visible::after {
         opacity: 1;
-        transform: translateX(0);
+        transform: translateX(4px);
       }
 
       .service-card:focus-visible {
@@ -769,32 +818,49 @@
         text-transform: uppercase;
       }
 
-      .partner-placeholder {
-        min-height: 104px;
-        padding: 14px;
+      .partner-logo {
+        min-height: 0;
+        padding: 0;
         display: grid;
         place-items: center;
-        color: var(--muted);
-        text-align: center;
-        background: rgba(255, 255, 255, 0.88);
-        border: 1px dashed #b8c9bd;
-        border-radius: 14px;
-        font-size: 0.76rem;
-        line-height: 1.4;
+        background: transparent;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
       }
 
-      .partner-placeholder::before {
-        content: "+";
-        display: block;
-        color: var(--green-700);
-        font-size: 1.35rem;
-        font-weight: 400;
+      .partner-logo img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        border-radius: 0;
+      }
+
+      .partners-mobile {
+        display: none;
+        margin-top: 34px;
+      }
+
+      .partners-mobile h3 {
+        margin: 0 0 18px;
+        color: var(--green-900);
+        text-align: center;
+      }
+
+      .partners-mobile-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
       }
 
       @media (min-width: 1650px) {
         .partner-rail {
           display: grid;
         }
+      }
+
+      @media (max-width: 1649px) {
+        .partners-mobile { display: block; }
       }
 
       .contact-panel {
@@ -904,6 +970,47 @@
         background: #0d783e;
       }
 
+      @media (max-width: 1400px) {
+        .menu-toggle {
+          display: grid;
+          place-items: center;
+        }
+
+        .nav-links {
+          position: fixed;
+          inset: 78px 0 auto;
+          max-height: calc(100vh - 78px);
+          padding: 24px 20px 28px;
+          display: none;
+          align-items: stretch;
+          flex-direction: column;
+          gap: 6px;
+          overflow-y: auto;
+          background: var(--white);
+          border-bottom: 1px solid var(--line);
+          box-shadow: 0 20px 40px rgba(10, 45, 32, 0.12);
+        }
+
+        .nav-links.open {
+          display: flex;
+        }
+
+        .nav-links > a:not(.button) {
+          padding: 12px 4px;
+        }
+
+        .nav-more {
+          width: 100%;
+          padding: 12px 4px;
+        }
+
+        .nav-submenu {
+          position: static;
+          margin-top: 10px;
+          box-shadow: none;
+        }
+      }
+
       @media (max-width: 900px) {
         .menu-toggle {
           display: grid;
@@ -931,6 +1038,17 @@
           padding: 12px 4px;
         }
 
+        .nav-more {
+          width: 100%;
+          padding: 12px 4px;
+        }
+
+        .nav-submenu {
+          position: static;
+          margin-top: 10px;
+          box-shadow: none;
+        }
+
         .hero {
           min-height: 650px;
         }
@@ -944,7 +1062,8 @@
         }
 
         .hero-content {
-          width: 52%;
+          width: 48%;
+          max-width: 470px;
         }
 
         .hero-proof {
@@ -1039,6 +1158,7 @@
 
         .hero-content {
           width: 100%;
+          max-width: 560px;
           padding: 88px 0;
         }
 
@@ -1049,6 +1169,7 @@
         .hero-brand {
           width: 82px;
           height: 82px;
+          margin-top: 0;
         }
 
         .hero-actions,
@@ -1068,7 +1189,8 @@
         }
 
         .service-card {
-          min-height: auto;
+          min-height: 264px;
+          height: 264px;
         }
 
         .service-index {
@@ -1111,6 +1233,14 @@
           flex-direction: column;
         }
 
+        .partners-mobile-grid { grid-template-columns: 1fr; }
+
+        .footer-links {
+          width: 100%;
+          flex-wrap: wrap;
+          gap: 12px 18px;
+        }
+
         .whatsapp-float {
           right: 14px;
           bottom: 14px;
@@ -1146,7 +1276,7 @@
 
     <header>
       <div class="container nav">
-        <a class="brand" href="#inicio" aria-label="J&D Serviços Veterinários — início">
+        <a class="brand" href="/" aria-label="J&D Serviços Veterinários — início">
           <img src="/logo.png" alt="" width="52" height="52" />
           <span class="brand-copy">
             <span>Serviços veterinários</span>
@@ -1166,11 +1296,20 @@
 
         <nav class="nav-links" id="menu-principal" aria-label="Navegação principal">
           <a href="#servicos">Serviços</a>
-          <a href="#sefaz">Defesas SEFAZ</a>
-          <a href="/conteudos.html">Conteúdos</a>
-          <a href="#processo">Como atuamos</a>
-          <a href="#sobre">Sobre</a>
+          <a href="/exportacao.html">Exportação</a>
+          <a href="/projetos-regularizacoes.html">Projetos &amp; Regularizações</a>
+          <a href="/sefaz.html">Defesas SEFAZ</a>
+          <a href="/laboratorio.html">Laboratório</a>
           <a href="#contato">Contato</a>
+          <details class="nav-more">
+            <summary>Mais</summary>
+            <div class="nav-submenu">
+              <a href="/conteudos.html">Conteúdos</a>
+              <a href="/loja.html">Loja</a>
+              <a href="/international.html">International</a>
+              <a href="#sobre">A J&amp;D</a>
+            </div>
+          </details>
           <a
             class="button button-primary"
             href="https://wa.me/5516997741402?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20os%20servi%C3%A7os%20da%20J%26D."
@@ -1240,40 +1379,45 @@
           </div>
 
           <div class="services-grid">
-            <a class="service-card reveal" href="/servicos.html#quarentena">
+            <a class="service-card reveal" href="/exportacao.html">
               <span class="service-index">01</span>
-              <h3>Gestão de quarentena sanitária</h3>
-              <p>Protocolos oficiais, biosseguridade, rotina sanitária e monitoramento contínuo.</p>
+              <h3>Exportação de animais vivos</h3>
+              <p>Suporte técnico da propriedade ao embarque.</p>
             </a>
-            <a class="service-card reveal" href="/servicos.html#epe">
+            <a class="service-card reveal" href="/projetos-regularizacoes.html">
               <span class="service-index">02</span>
-              <h3>Habilitação e manutenção de EPE</h3>
-              <p>Adequação da estrutura e dos processos às exigências aplicáveis do MAPA.</p>
+              <h3>Habilitação e regularização de EPE</h3>
+              <p>Projetos, adequações e suporte à regularização.</p>
             </a>
-            <a class="service-card reveal" href="/servicos.html#planejamento">
+            <a class="service-card reveal" href="/sefaz.html">
               <span class="service-index">03</span>
-              <h3>Planejamento operacional</h3>
-              <p>Definição de fluxos, equipes, cronogramas e pontos de controle de qualidade.</p>
+              <h3>Defesas e regularizações SEFAZ</h3>
+              <p>Análise técnica, documental e estratégica.</p>
             </a>
-            <a class="service-card reveal" href="/servicos.html#assistencia">
+            <a class="service-card reveal" href="/projetos-regularizacoes.html">
               <span class="service-index">04</span>
-              <h3>Assistência técnica especializada</h3>
-              <p>Acompanhamento veterinário com atenção à saúde e ao bem-estar animal.</p>
+              <h3>Projetos, plantas e adequações estruturais</h3>
+              <p>Soluções planejadas para propriedades e estabelecimentos.</p>
             </a>
-            <a class="service-card reveal" href="/servicos.html#documentacao">
+            <a class="service-card reveal" href="/laboratorio.html">
               <span class="service-index">05</span>
-              <h3>Documentação e compliance</h3>
-              <p>Organização documental, rastreabilidade e suporte técnico ao exportador.</p>
+              <h3>Laboratório veterinário — grandes animais</h3>
+              <p>Diagnóstico e suporte laboratorial especializado.</p>
             </a>
-            <a class="service-card reveal" href="/servicos.html#autoridades">
+            <a class="service-card reveal" href="/responsabilidade-tecnica.html">
               <span class="service-index">06</span>
-              <h3>Interface com autoridades</h3>
-              <p>Alinhamento com VIGIAGRO e demais órgãos envolvidos na operação.</p>
+              <h3>Assistência técnica e responsabilidade técnica</h3>
+              <p>Acompanhamento profissional ligado à realidade da operação.</p>
             </a>
-            <a class="service-card reveal" href="/servicos.html#laboratorio">
+            <a class="service-card reveal" href="/planejamento-operacional.html">
               <span class="service-index">07</span>
-              <h3>Exames laboratoriais</h3>
-              <p>Exames para pets e animais de grande porte, com orientação técnica e atendimento cuidadoso.</p>
+              <h3>Planejamento e suporte às operações de exportação</h3>
+              <p>Integração das soluções necessárias ao projeto.</p>
+            </a>
+            <a class="service-card reveal" href="/loja.html">
+              <span class="service-index">08</span>
+              <h3>Loja J&amp;D</h3>
+              <p>Produtos, soluções e oportunidades para o agronegócio.</p>
             </a>
           </div>
 
@@ -1293,7 +1437,7 @@
                 <li>Reconstrução da cadeia fiscal, sanitária e aduaneira</li>
                 <li>Organização de documentos, provas e fundamentos da defesa</li>
               </ul>
-              <a class="sefaz-link" href="/servicos.html#defesas-sefaz">Ver detalhes sobre as defesas →</a>
+              <a class="sefaz-link" href="/sefaz.html">Ver detalhes sobre as defesas →</a>
             </div>
           </article>
         </div>
@@ -1391,15 +1535,12 @@
       <section class="contact" id="contato">
         <aside class="partner-rail partner-rail-left" aria-label="Logotipos de parceiros à esquerda">
           <span class="partner-rail-title">Parceiros</span>
-          <div class="partner-placeholder">Logo do parceiro</div>
-          <div class="partner-placeholder">Logo do parceiro</div>
-          <div class="partner-placeholder">Logo do parceiro</div>
+          <a class="partner-logo" href="https://segurancavp.com.br/" target="_blank" rel="noopener noreferrer" aria-label="Visitar VP Segurança"><img src="/assets/parceiros/vp-seguranca.webp" alt="VP Segurança"></a>
+          <a class="partner-logo" href="https://www.instagram.com/_queropolpa_/" target="_blank" rel="noopener noreferrer" aria-label="Visitar Quero Polpa"><img src="/assets/parceiros/quero-polpa.webp" alt="Quero Polpa Nutrição Animal"></a>
         </aside>
         <aside class="partner-rail partner-rail-right" aria-label="Logotipos de parceiros à direita">
           <span class="partner-rail-title">Parceiros</span>
-          <div class="partner-placeholder">Logo do parceiro</div>
-          <div class="partner-placeholder">Logo do parceiro</div>
-          <div class="partner-placeholder">Logo do parceiro</div>
+          <a class="partner-logo" href="https://www.instagram.com/murilolovaglio.agro/" target="_blank" rel="noopener noreferrer" aria-label="Visitar M.R. Lovaglio"><img src="/assets/parceiros/mr-lovaglio.webp" alt="M.R. Lovaglio Nutrição Animal"></a>
         </aside>
         <div class="container">
           <div class="contact-panel">
@@ -1433,23 +1574,20 @@
                 <a href="mailto:jdservicosveterinarios@gmail.com">jdservicosveterinarios@gmail.com</a>
               </div>
               <div class="contact-row">
-                <strong>Endereço</strong>
-                <a
-                  href="https://www.google.com/maps/search/?api=1&query=Rua%20Antonio%20Francisco%20Nicolau%20Gonzales%20Rodrigues%20208%20Jardim%20Casanova%20Capela%20do%20Alto%20SP%2018195-158"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  CEP 18195-158<br />Rua Antonio Francisco Nicolau Gonzales Rodrigues, 208<br />
-                  Jardim Casanova — Capela do Alto, SP
-                </a>
-              </div>
-              <div class="contact-row">
                 <strong>Redes sociais</strong>
                 <a href="https://www.facebook.com/share/1cux1fBRZz/" target="_blank" rel="noopener noreferrer">
                   Acompanhe a J&amp;D no Facebook
                 </a>
               </div>
             </address>
+          </div>
+          <div class="partners-mobile" aria-labelledby="partners-title">
+            <h3 id="partners-title">Parceiros</h3>
+            <div class="partners-mobile-grid">
+              <a class="partner-logo" href="https://segurancavp.com.br/" target="_blank" rel="noopener noreferrer"><img src="/assets/parceiros/vp-seguranca.webp" alt="VP Segurança"></a>
+              <a class="partner-logo" href="https://www.instagram.com/_queropolpa_/" target="_blank" rel="noopener noreferrer"><img src="/assets/parceiros/quero-polpa.webp" alt="Quero Polpa Nutrição Animal"></a>
+              <a class="partner-logo" href="https://www.instagram.com/murilolovaglio.agro/" target="_blank" rel="noopener noreferrer"><img src="/assets/parceiros/mr-lovaglio.webp" alt="M.R. Lovaglio Nutrição Animal"></a>
+            </div>
           </div>
         </div>
       </section>
